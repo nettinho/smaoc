@@ -52,13 +52,7 @@ function mount(ctx, html, { day, year, example_input, run_config }) {
       const run_config = runConfigCbs
         .filter((i) => i.checked)
         .map((i) => i.value);
-      console.log("pushing run_config", run_config);
       ctx.pushEvent("update", { run_config });
-    });
-    console.log({
-      value: cb.value,
-      run_config,
-      invalue: cb.value in run_config,
     });
     cb.checked = run_config.includes(cb.value);
   });
@@ -83,8 +77,6 @@ function mount(ctx, html, { day, year, example_input, run_config }) {
   ctx.root.querySelector("#hide-puzzle").addEventListener("click", () => {
     ctx.root.querySelector("#puzzle-short").style.display = "block";
     ctx.root.querySelector("#puzzle-body").style.display = "none";
-
-    ctx.pushEvent("hide_editor");
   });
   ctx.root.querySelector("#show-puzzle").addEventListener("click", () => {
     ctx.root.querySelector("#puzzle-short").style.display = "none";

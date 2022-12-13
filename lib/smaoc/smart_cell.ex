@@ -54,23 +54,6 @@ defmodule Smaoc.SmartCell do
     {:ok, ctx.assigns, ctx}
   end
 
-  @impl true
-  def handle_event("fetch_puzzle", %{"year" => year, "day" => day} = params, ctx) do
-    "https://adventofcode.com/#{year}/day/#{day}"
-    |> Req.get(headers: [{"cookie", "session=#{System.fetch_env!("LB_AOC_SESSION")}"}])
-    |> handle_fetch(ctx, params)
-  rescue
-    error ->
-      message =
-        case error do
-          %System.EnvError{env: "LB_AOC_SESSION"} -> "Error fetching puzzle. Please define the 'AOC_SESSION' Livebook secret."
-          m -> "Error: " <> Kernel.inspect(m)
-        end
-
-      broadcast_event(ctx, "error", message)
-      {:noreply, ctx}
-  end
-
   defp handle_fetch({:ok, %{status: 404}}, ctx, _params) do
     broadcast_event(ctx, "error", "Error: This puzzle is not available")
     {:noreply, ctx}
@@ -99,6 +82,23 @@ defmodule Smaoc.SmartCell do
     broadcast_event(ctx, "load_articles", %{articles: articles, comments: comments})
 
     {:noreply, assign(ctx, year: year, day: day, input: input)}
+  end
+
+  @impl true
+  def handle_event("fetch_puzzle", %{"year" => year, "day" => day} = params, ctx) do
+    "https://adventofcode.com/#{year}/day/#{day}"
+    |> Req.get(headers: [{"cookie", "session=#{System.fetch_env!("LB_AOC_SESSION")}"}])
+    |> handle_fetch(ctx, params)
+  rescue
+    error ->
+      message =
+        case error do
+          %System.EnvError{env: "LB_AOC_SESSION"} -> "Error fetching puzzle. Please define the 'AOC_SESSION' Livebook secret."
+          m -> "Error: " <> Kernel.inspect(m)
+        end
+
+      broadcast_event(ctx, "error", message)
+      {:noreply, ctx}
   end
 
   @impl true
