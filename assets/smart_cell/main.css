@@ -1,0 +1,19 @@
+body {
+  min-width: unset;
+}
+
+select {
+  background: transparent;
+  color: inherit;
+  border: 1px solid #666666;
+  background: #10101a;
+  padding: 0 2px;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+article {
+  padding: 0px 15px 0px 15px;
+  margin: 0px !important;
+  width: unset !important;
+}

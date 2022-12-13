@@ -1,0 +1,87 @@
+<div id="header-selection">
+  <article>
+    <h2>--- Advent of code helper ---</h2>
+    <p>
+      This smart cell was created to make cleaner livebooks for solving AoC
+      puzzles. All you need to do is set up a <em>Livebook secret</em> with the
+      name <code>AOC_SESSION</code>, choose a <em>year</em> and a
+      <em>day</em> that this cell will fetch and show the puzzle description and
+      stuff.
+    </p>
+  </article>
+  <div style="padding: 20px">
+    <label for="year">Choose the year </label>
+    <select name="year" id="year">
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+    </select>
+    <label for="day"> and the day </label>
+    <select name="day" id="day">
+      <option value="1">1</option>
+      <option value="8">8</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    <input type="submit" id="fetch-puzzle" value="[Get puzzle]" />
+  </div>
+</div>
+<div style="display: none" id="puzzle-body">
+  <article>
+    <h2>--- Advent of code helper ---</h2>
+    <p>
+      Puzzle set for day <em id="show-day"></em> of the year <em id="show-year"></em>.
+      <input type="submit" id="refetch-puzzle" value="[Refresh]" />
+    </p>
+  </article>
+  <div style="padding-bottom: 20px">
+    <article>
+      <h2 style="display: none; cursor: pointer" id="title-1"></h2>
+      <div
+        style="display: none; transition: display 0.5s ease-in"
+        id="content-1"
+      ></div>
+    </article>
+    <div style="padding: 0px 15px 0px 15px" id="comments-1"></div>
+    <article>
+      <h2 style="display: none; cursor: pointer" id="title-2"></h2>
+      <div
+        style="display: none; transition: display 0.5s ease-in"
+        id="content-2"
+      ></div>
+    </article>
+    <div style="padding: 0px 15px 0px 15px" id="comments-2"></div>
+  </div>
+  <article style="padding-bottom: 20px">
+    <p>Place the <em>example input</em> here:</p>
+    <textarea style="width: 100%;" id="example-input" cols="2" rows="10"></textarea>
+  </article>
+  <article style="padding-bottom: 20px">
+    <h2>--- Select which parts and inputs to run ---</h2>
+    <p>
+      <table style="padding-left: 20px">
+        <tr>
+          <td><label>
+            <input type="checkbox" name="run_config" value="example" />
+            <span>Example input</span>
+          </label></td>
+          <td><label>
+            <input type="checkbox" name="run_config" value="puzzle" />
+            <span>Puzzle input</span>
+          </label></td>
+        </tr>
+        <tr><td> </td></tr>
+        <tr>
+          <td><label style="margin-right: 30px">
+            <input type="checkbox" name="run_config" value="part1" />
+            <span>Part 1</span>
+          </label></td>
+          <td><label>
+            <input type="checkbox" name="run_config" value="part2" />
+            <span>Part 2</span>
+          </label></td>
+        </tr>
+      </table>
+    </p>
+  </article>
+</div>
