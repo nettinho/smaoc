@@ -55,12 +55,27 @@ defmodule Smaoc.SmartCell do
   end
 
   @impl true
-  def handle_event("fetch_puzzle", %{"year" => year, "day" => day}, ctx) do
-    {:ok, %{body: body}} =
-      Req.get("https://adventofcode.com/#{year}/day/#{day}",
-        headers: [{"cookie", "session=#{System.fetch_env!("LB_AOC_SESSION")}"}]
-      )
+  def handle_event("fetch_puzzle", %{"year" => year, "day" => day} = params, ctx) do
+    "https://adventofcode.com/#{year}/day/#{day}"
+    |> Req.get(headers: [{"cookie", "session=#{System.fetch_env!("LB_AOC_SESSION")}"}])
+    |> handle_fetch(ctx, params)
+  rescue
+    error ->
+      message =
+        case error do
+          %System.EnvError{env: "LB_AOC_SESSION"} -> "Error fetching puzzle. Please define the 'AOC_SESSION' Livebook secret."
+          m -> "Error: " <> Kernel.inspect(m)
+        end
 
+      broadcast_event(ctx, "error", message)
+      {:noreply, ctx}
+  end
+
+  defp handle_fetch({:ok, %{status: 404}}, ctx, _params) do
+    broadcast_event(ctx, "error", "Error: This puzzle is not available")
+    {:noreply, ctx}
+  end
+  defp handle_fetch({:ok, %{body: body}}, ctx, %{"year" => year, "day" => day}) do
     {:ok, %{body: input}} =
       Req.get("https://adventofcode.com/#{year}/day/#{day}/input",
         headers: [{"cookie", "session=#{System.fetch_env!("LB_AOC_SESSION")}"}]
@@ -84,16 +99,6 @@ defmodule Smaoc.SmartCell do
     broadcast_event(ctx, "load_articles", %{articles: articles, comments: comments})
 
     {:noreply, assign(ctx, year: year, day: day, input: input)}
-  rescue
-    error ->
-      message =
-        case error do
-          %System.EnvError{env: "LB_AOC_SESSION"} -> "NO AOC SESSION IS SET UP"
-          _ -> "Something has failed fetching the puzzle"
-        end
-
-      broadcast_event(ctx, "error", message)
-      {:noreply, ctx}
   end
 
   @impl true

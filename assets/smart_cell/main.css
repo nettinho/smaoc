@@ -17,3 +17,8 @@ article {
   margin: 0px !important;
   width: unset !important;
 }
+
+.error {
+  color: #bb0000;
+  text-shadow: 0 0 5px #990000;
+}

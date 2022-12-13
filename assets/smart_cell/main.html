@@ -1,4 +1,4 @@
-<div id="header-selection">
+<div style="display: none" id="header-selection">
   <article>
     <h2>--- Advent of code helper ---</h2>
     <p>
@@ -50,6 +50,7 @@
       <option value="25">25</option>
     </select>
     <input type="submit" id="fetch-puzzle" value="[Get puzzle]" />
+    <p style="display: none;" id="submit-error" class="error"></p>
   </div>
 </div>
 <div style="display: none" id="puzzle-body">
@@ -110,4 +111,13 @@
       </table>
     </p>
   </article>
+  <div style="float: right;"><input type="submit" id="hide-puzzle" value="[Hide puzzle]" /></div>
+</div>
+<div style="display: none" id="puzzle-short">
+  <article>
+    <h2>--- Advent of code helper ---</h2>
+    <p>Puzzle set for day <em id="show-day-short"></em> of the year <em id="show-year-short"></em>.</p>
+    <p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
+  </article>
+  <div style="float: right;"><input type="submit" id="show-puzzle" value="[Show puzzle]" /></div>
 </div>

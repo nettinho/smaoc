@@ -11,8 +11,6 @@ export function init(ctx, assigns) {
 function mount(ctx, html, { day, year, example_input, run_config }) {
   ctx.root.innerHTML = html;
 
-  const fetchButton = ctx.root.querySelector("#fetch-puzzle");
-  const refetchButton = ctx.root.querySelector("#refetch-puzzle");
   const title1 = ctx.root.querySelector("#title-1");
   const content1 = ctx.root.querySelector("#content-1");
   const comments1 = ctx.root.querySelector("#comments-1");
@@ -21,21 +19,22 @@ function mount(ctx, html, { day, year, example_input, run_config }) {
   const comments2 = ctx.root.querySelector("#comments-2");
 
   const exampleElem = ctx.root.querySelector("#example-input");
-  //const cb_example = ctx.root.querySelector("#cb_example");
 
   const addRefetchEvent = (year, day) => {
-    refetchButton.addEventListener("click", () =>
+    ctx.root.querySelector("#refetch-puzzle").addEventListener("click", () =>
       ctx.pushEvent("fetch_puzzle", { year, day })
     );
     ctx.root.querySelector("#show-year").innerHTML = year;
     ctx.root.querySelector("#show-day").innerHTML = day;
+    ctx.root.querySelector("#show-year-short").innerHTML = year;
+    ctx.root.querySelector("#show-day-short").innerHTML = day;
   };
 
   if (day && year) {
     ctx.pushEvent("fetch_puzzle", { year, day });
     addRefetchEvent(year, day);
   } else
-    fetchButton.addEventListener("click", () => {
+      ctx.root.querySelector("#fetch-puzzle").addEventListener("click", () => {
       const year = ctx.root.querySelector("#year").value;
       const day = ctx.root.querySelector("#day").value;
       ctx.pushEvent("fetch_puzzle", { year, day });
@@ -81,7 +80,23 @@ function mount(ctx, html, { day, year, example_input, run_config }) {
   title1.addEventListener("click", () => toggleArticle(1));
   title2.addEventListener("click", () => toggleArticle(2));
 
-  ctx.handleEvent("error", console.error);
+  ctx.root.querySelector("#hide-puzzle").addEventListener("click", () => {
+    ctx.root.querySelector("#puzzle-short").style.display = "block";
+    ctx.root.querySelector("#puzzle-body").style.display = "none";
+
+    ctx.pushEvent("hide_editor");
+  });
+  ctx.root.querySelector("#show-puzzle").addEventListener("click", () => {
+    ctx.root.querySelector("#puzzle-short").style.display = "none";
+    ctx.root.querySelector("#puzzle-body").style.display = "block";
+  });
+
+  ctx.handleEvent("error", message => {
+    const errorElem = ctx.root.querySelector("#submit-error");
+    errorElem.innerHTML = message;
+    errorElem.style.display = "block";
+  });
+  ctx.handleEvent("console.log", console.log)
 
   ctx.handleEvent(
     "load_articles",
@@ -102,9 +117,17 @@ function mount(ctx, html, { day, year, example_input, run_config }) {
         title2.style.display = "none";
         content2.innerHTML = "";
       }
-
       ctx.root.querySelector("#header-selection").style.display = "none";
-      ctx.root.querySelector("#puzzle-body").style.display = "block";
+
+      if(comm2.includes("Both parts")){
+        ctx.root.querySelector("#puzzle-body").style.display = "none";
+        ctx.root.querySelector("#puzzle-short").style.display = "block";
+      }else{
+        ctx.root.querySelector("#puzzle-body").style.display = "block";
+        ctx.root.querySelector("#puzzle-short").style.display = "none";
+      }
     }
   );
+
+  ctx.root.querySelector("#header-selection").style.display = "block";
 }
