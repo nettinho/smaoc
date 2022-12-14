@@ -1,21 +1,19 @@
 # Smaoc
 
-**TODO: Add description**
+This project has a SmartCell for fetching Advent of Code puzzles and solve them in a Livebook
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `smaoc` to your list of dependencies in `mix.exs`:
-
+On the Livebook dependencies, 
 ```elixir
-def deps do
-  [
-    {:smaoc, "~> 0.1.0"}
-  ]
-end
+Mix.install([
+  {:smaoc, git: "https://github.com/nettinho/smaoc"}
+], force: true)
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/smaoc>.
+Just select the SmartCell, choose the date and fetch the puzzle.
+You can fill in the example textarea copying and pasting from the problem description.
+Implement the `&Smaoc.Solution.solve/2` functions and then choose which part and with which inputs you want to run.
+
+If you return the answer, your may submit it directly from the livebook.
 
