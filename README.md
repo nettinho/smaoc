@@ -20,3 +20,5 @@ To avoid duplication of modules on the same notebook you can update the module n
 Implement the `&solution_module.solve/2` functions and then choose which part and with which inputs you want to run.
 
 If you return the answer, your may submit it directly from the livebook.
+
+In this project there is also a template we all the SmartCells for the year created

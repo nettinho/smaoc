@@ -1,0 +1,1167 @@
+# Advent of Code
+
+```elixir
+Mix.install([
+  {:smaoc, git: "https://github.com/nettinho/smaoc"}
+])
+```
+
+## Solutions
+
+### Root section to execute each day independently
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 1
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day1\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input\n    |> String.split(\"\\n\")\n    |> Enum.reject(&(&1 == \"\"))\n    |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day1
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input
+    |> String.split("\n")
+    |> Enum.reject(&(&1 == ""))
+    |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 2
+
+<!-- livebook:{"attrs":{"day":2,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day2\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input\n    |> String.split(\"\\n\")\n    |> Enum.reject(&(&1 == \"\"))\n    |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day2
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input
+    |> String.split("\n")
+    |> Enum.reject(&(&1 == ""))
+    |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = 2
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 3
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day3\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day3
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 4
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day4\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day4
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 5
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day5\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day5
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 6
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day6\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day6
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 7
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day7\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day7
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 8
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day8\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day8
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 9
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day9\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day9
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 10
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day10\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day10
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 11
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day11\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day11
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 12
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day12\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day12
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 13
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day13\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day13
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 14
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day14\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day14
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 15
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day15\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day15
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 16
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day16\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day16
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 17
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day17\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day17
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 18
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day18\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day18
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 19
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day19\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day19
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 20
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day20\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day20
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 21
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day21\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day21
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 22
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day22\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day22
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 23
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day23\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day23
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 24
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day24\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day24
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Day 25
+
+<!-- livebook:{"attrs":{"day":null,"example_input":"","input":"","run_config":["part1","example"],"source":"solution_module = Smaoc.Solution.Day25\n\ndefmodule solution_module do\n  defp parse_input(input) do\n    input |> String.split(\"\\n\") |> Enum.reject(&(&1 == \"\")) |> Enum.count()\n  end\n\n  def solve(:part1, input) do\n    parse_input(input)\n  end\n\n  def solve(:part2, input) do\n    parse_input(input)\n  end\nend","year":null},"chunks":null,"kind":"Elixir.Smaoc.SmartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+solution_module = Smaoc.Solution
+solution_module = Smaoc.Solution.Day25
+
+defmodule solution_module do
+  defp parse_input(input) do
+    input |> String.split("\n") |> Enum.reject(&(&1 == "")) |> Enum.count()
+  end
+
+  def solve(:part1, input) do
+    parse_input(input)
+  end
+
+  def solve(:part2, input) do
+    parse_input(input)
+  end
+end
+
+year = nil
+day = nil
+run_config = ["part1", "example"]
+inputs = %{"puzzle" => "", "example" => ""}
+
+response =
+  for part <- ["part1", "part2"], input_key <- ["puzzle", "example"] do
+    {part, input_key}
+  end
+
+response =
+  response
+  |> Enum.filter(fn {part, input_key} ->
+    part in run_config and input_key in run_config
+  end)
+  |> Enum.map(fn {part, input_key} ->
+    [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+  end)
+
+Smaoc.Response.new(%{response: response, run_config: run_config, year: year, day: day})
+```
