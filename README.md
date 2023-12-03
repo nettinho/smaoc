@@ -4,7 +4,8 @@ This project has a SmartCell for fetching Advent of Code puzzles and solve them 
 
 ## Installation
 
-On the Livebook dependencies, 
+On the Livebook dependencies,
+
 ```elixir
 Mix.install([
   {:smaoc, git: "https://github.com/nettinho/smaoc"}
@@ -15,7 +16,7 @@ First you need to set up the livebook secret `AOC_SESSION` with the session valu
 
 Then select the SmartCell, choose the date and fetch the puzzle.
 You can fill in the example textarea copying and pasting from the problem description.
-Implement the `&Smaoc.Solution.solve/2` functions and then choose which part and with which inputs you want to run.
+To avoid duplication of modules on the same notebook you can update the module name of the variable `solution_module` on the generated editor template
+Implement the `&solution_module.solve/2` functions and then choose which part and with which inputs you want to run.
 
 If you return the answer, your may submit it directly from the livebook.
-

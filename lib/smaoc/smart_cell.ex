@@ -14,7 +14,9 @@ defmodule Smaoc.SmartCell do
 
     default_source =
       quote do
-        defmodule Smaoc.Solution do
+        solution_module = Smaoc.Solution.DayX
+
+        defmodule solution_module do
           defp parse_input(input) do
             input
             |> String.split("\n")
@@ -58,6 +60,7 @@ defmodule Smaoc.SmartCell do
     broadcast_event(ctx, "error", "Error: This puzzle is not available")
     {:noreply, ctx}
   end
+
   defp handle_fetch({:ok, %{body: body}}, ctx, %{"year" => year, "day" => day}) do
     {:ok, %{body: input}} =
       Req.get("https://adventofcode.com/#{year}/day/#{day}/input",
@@ -93,8 +96,11 @@ defmodule Smaoc.SmartCell do
     error ->
       message =
         case error do
-          %System.EnvError{env: "LB_AOC_SESSION"} -> "Error fetching puzzle. Please define the 'AOC_SESSION' Livebook secret."
-          m -> "Error: " <> Kernel.inspect(m)
+          %System.EnvError{env: "LB_AOC_SESSION"} ->
+            "Error fetching puzzle. Please define the 'AOC_SESSION' Livebook secret."
+
+          m ->
+            "Error: " <> Kernel.inspect(m)
         end
 
       broadcast_event(ctx, "error", message)
@@ -125,6 +131,12 @@ defmodule Smaoc.SmartCell do
 
   @impl true
   def to_source(attrs) do
+    default_mod =
+      quote do
+        solution_module = Smaoc.Solution
+      end
+      |> Kino.SmartCell.quoted_to_string()
+
     module_execution =
       quote do
         year = unquote(attrs["year"])
@@ -147,7 +159,7 @@ defmodule Smaoc.SmartCell do
             part in run_config and input_key in run_config
           end)
           |> Enum.map(fn {part, input_key} ->
-            [part, input_key, Smaoc.Solution.solve(String.to_atom(part), inputs[input_key])]
+            [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
           end)
 
         Smaoc.Response.new(%{
@@ -159,7 +171,11 @@ defmodule Smaoc.SmartCell do
       end
       |> Kino.SmartCell.quoted_to_string()
 
-    attrs["source"] <> "\n" <> module_execution
+    """
+    #{default_mod}
+    #{attrs["source"]}
+    #{module_execution}
+    """
   end
 
   defp handle_comments([
