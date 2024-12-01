@@ -18,10 +18,7 @@ defmodule Smaoc.SmartCell do
 
         defmodule solution_module do
           defp parse_input(input) do
-            input
-            |> String.split("\n")
-            |> Enum.reject(&(&1 == ""))
-            |> Enum.count()
+            String.split(input, "\n", trim: true)
           end
 
           def solve(:part1, input) do
@@ -159,7 +156,14 @@ defmodule Smaoc.SmartCell do
             part in run_config and input_key in run_config
           end)
           |> Enum.map(fn {part, input_key} ->
-            [part, input_key, solution_module.solve(String.to_atom(part), inputs[input_key])]
+            [
+              part,
+              input_key,
+              part
+              |> String.to_atom()
+              |> solution_module.solve(inputs[input_key])
+              |> inspect
+            ]
           end)
 
         Smaoc.Response.new(%{
